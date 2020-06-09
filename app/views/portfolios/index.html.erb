@@ -7,4 +7,5 @@
     <p><%= portfolio.body %></p>
     <p><%= image_tag portfolio.thumb_image %></p>
     <%= link_to 'Edit Portfolio', edit_portfolio_path(portfolio) %>
+    <%= link_to 'View Portfolio', portfolio_path(portfolio) %>
 <% end %>
