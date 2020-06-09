@@ -2,13 +2,6 @@
 <html>
   <head>
     <title>DevcampPortfolio | <%= @page_title %></title>
-    <% if user_signed_in? %>
-      <%= link_to 'Logout', destroy_user_session_path, method: :DELETE %>
-      <%= link_to 'Edit Profile', edit_user_registration_path %>
-    <% else %>
-      <%= link_to 'Log in', new_user_session_path %>
-      <%= link_to 'Register', new_user_registration_path %>
-    <% end %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -17,6 +10,7 @@
   </head>
 
   <body>
+    <%= nav_authentication_helper %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p> 
     <%= render 'shared/navbar', location: 'top' %>
