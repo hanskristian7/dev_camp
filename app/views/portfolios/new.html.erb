@@ -10,7 +10,17 @@
     <%= f.label :Body %>
     <%= f.text_field :body, placeholder: "Enter body here..." %>
 
+    <ul>
+        <%= f.fields_for :technologies do |technology_form| %>
+            <li>
+                <%= technology_form.label :name %>
+                <%= technology_form.text_field :name %>
+            </li>
+        <% end %>
+    </ul>
+
     <div>
         <%= f.submit %>
     </div>
+
 <% end %>

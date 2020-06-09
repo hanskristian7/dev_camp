@@ -5,4 +5,10 @@
 <p><%= image_tag @portfolio.main_image %></p>
 <p><%= @portfolio.body %></p>
 
+<h4>Technologies Used: </h4>
+<% @portfolio.technologies.each do |portfolio_technology| %>
+<p><%= portfolio_technology.name %></p>
+<% end %>
+
+
 <%= link_to 'Edit Portfolio', edit_portfolio_path(@portfolio) %>
