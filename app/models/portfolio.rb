@@ -1,12 +1,13 @@
 class Portfolio < ApplicationRecord
+    include Placeholder
     before_save :default_images
 
     validates :title, presence: true
     validates :body, presence: true
 
     def default_images
-        self.main_image ||= "https://place-hold.it/600x400" if self.main_image.nil?
-        self.thumb_image ||= "https://place-hold.it/350x200" if self.thumb_image.nil?
+        self.main_image ||= Placeholder.image_generator(600, 400) if self.main_image.nil?
+        self.thumb_image ||= Placeholder.image_generator(350, 200) if self.thumb_image.nil?
     end
 
     def self.angular
