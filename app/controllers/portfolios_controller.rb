@@ -1,11 +1,12 @@
 class PortfoliosController < ApplicationController
     before_action :set_portfolio, only: [:show, :edit, :update, :destroy]
-    
+    layout 'portfolio'
     def show
-        
+        @page_title = @portfolio.title
     end
 
     def index
+        @page_title = "My Portfolios"
         @portfolios = Portfolio.all
     end
     

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>DevcampPortfolio</title>
+    <title>DevcampPortfolio | <%= @page_title %></title>
     <% if user_signed_in? %>
       <%= link_to 'Logout', destroy_user_session_path, method: :DELETE %>
       <%= link_to 'Edit Profile', edit_user_registration_path %>
@@ -19,8 +19,14 @@
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p> 
+    <div class="">
+      <div class=""> <%= link_to 'Home', root_path %> </div>
+      <div class=""> <%= link_to 'About', about_path %> </div>
+      <div class=""> <%= link_to 'Contact', contact_path %> </div>
+      <div class=""> <%= link_to 'Blog', blogs_path %> </div>
+      <div class=""> <%= link_to 'Portfolio', portfolios_path %> </div>
+    </div>
     <%= yield %>
-
     <% if session[:source] %>
       <p>
         Thanks for visiting me from <%= session[:source] %>
