@@ -10,11 +10,13 @@
   </head>
 
   <body>
-    <%= nav_authentication_helper %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p> 
-    <%= render 'shared/navbar', location: "top" %>
-    <%= yield %>
-    <%= source_helper("application") %>
+    <div class="container container-fluid">
+      <%= nav_authentication_helper %>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p> 
+      <%= render 'shared/navbar', location: "top" %>
+      <%= yield %>
+      <%= source_helper("application") %>
+    </div>
   </body>
 </html>
