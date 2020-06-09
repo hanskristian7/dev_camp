@@ -47,3 +47,10 @@ Portfolio.create!(
     thumb_image: "https://place-hold.it/350x200"
 )
 puts "9 skills created"
+
+3.times do |technology|
+    Portfolio.last.technologies.create!(
+        name: "Technology #{technology+1}"
+    )
+end
+puts "3 technologies created"

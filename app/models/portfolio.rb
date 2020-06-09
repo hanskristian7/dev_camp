@@ -2,6 +2,8 @@ class Portfolio < ApplicationRecord
     include Placeholder
     before_save :default_images
 
+    has_many :technologies
+    
     validates :title, presence: true
     validates :body, presence: true
 
