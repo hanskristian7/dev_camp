@@ -2,6 +2,12 @@
 <html>
   <head>
     <title>DevcampPortfolio</title>
+    <% if user_signed_in? %>
+      <%= link_to 'Logout', destroy_user_session_path, method: :DELETE %>
+    <% else %>
+      <%= link_to 'Log in', new_user_session_path %>
+      <%= link_to 'Register', new_user_registration_path %>
+    <% end %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -13,5 +19,6 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p> 
     <%= yield %>
+
   </body>
 </html>
