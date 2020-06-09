@@ -1,5 +1,5 @@
 class PortfoliosController < ApplicationController
-    before_action :set_portfolio, only: [:show, :edit, :update]
+    before_action :set_portfolio, only: [:show, :edit, :update, :destroy]
     
     def show
         
@@ -33,6 +33,14 @@ class PortfoliosController < ApplicationController
             redirect_to portfolios_path
         else
             render 'edit'
+        end
+    end
+
+    def destroy
+        if @portfolio.destroy
+            redirect_to portfolios_path
+        else
+            redirect_to portfolios_path
         end
     end
 
