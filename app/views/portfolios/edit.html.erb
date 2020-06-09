@@ -1,16 +1,2 @@
-<h1>Create Portfolio</h1>
-
-<%= form_for(@portfolio) do |f| %>
-    <%= f.label :Title %>
-    <%= f.text_field :title, placeholder: "Enter title here..." %>
-
-    <%= f.label :Subtitle %>
-    <%= f.text_field :subtitle, placeholder: "Enter subtitle here..." %>
-    
-    <%= f.label :Body %>
-    <%= f.text_field :body, placeholder: "Enter body here..." %>
-
-    <div>
-        <%= f.submit %>
-    </div>
-<% end %>
+<h1>Edit Portfolio</h1>
+<%= render 'form', portfolio: @portfolio %>

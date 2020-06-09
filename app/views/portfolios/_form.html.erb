@@ -1,0 +1,29 @@
+<%= form_for(@portfolio) do |f| %>
+    <div class="">
+        <%= f.label :Title %>
+        <%= f.text_field :title, placeholder: "Enter title here..." %>
+    </div>
+    <div class="">
+        <%= f.label :Subtitle %>
+        <%= f.text_field :subtitle, placeholder: "Enter subtitle here..." %>
+    </div>
+    
+    <div class="">
+        <%= f.label :Body %>
+        <%= f.text_field :body, placeholder: "Enter body here..." %>
+    </div>
+
+    <ul>
+        <%= f.fields_for :technologies do |technology_form| %>
+            <li>
+                <%= technology_form.label :name %>
+                <%= technology_form.text_field :name %>
+            </li>
+        <% end %>
+    </ul>
+
+    <div>
+        <%= f.submit %>
+    </div>
+
+<% end %>
