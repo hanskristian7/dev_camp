@@ -8,6 +8,14 @@ class PortfoliosController < ApplicationController
     def index
         @portfolios = Portfolio.all
     end
+    
+    def angular_portfolio
+        @portfolios = Portfolio.angular
+    end
+    
+    def ruby_on_rails_portfolio
+        @portfolios = Portfolio.ruby_on_rails_portfolio
+    end
 
     def new
         @portfolio = Portfolio.new
