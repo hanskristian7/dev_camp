@@ -2,7 +2,6 @@ class PortfoliosController < ApplicationController
     before_action :set_portfolio, only: [:show, :edit, :update, :destroy]
     layout 'portfolio'
     access all: [:show, :index, :angular_portfolio, :ruby_on_rails_portfolio], user: {except: [:destroy, :new, :create, :update, :edit]}, admin: :all
-    
 
     def show
         @page_title = @portfolio.title
@@ -11,6 +10,13 @@ class PortfoliosController < ApplicationController
     def index
         @page_title = "My Portfolios"
         @portfolios = Portfolio.by_position
+    end
+
+    def sort
+        params[:order].each do |key, value|
+          Portfolio.find(value[:id]).update(position: value[:position])
+        end
+        render 'index'
     end
     
     def angular_portfolio
