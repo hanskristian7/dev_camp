@@ -6,6 +6,9 @@ class Portfolio < ApplicationRecord
 
     before_save :default_images
 
+    def self.by_position
+        order("position ASC")
+    end
     
     validates :title, presence: true
     validates :body, presence: true

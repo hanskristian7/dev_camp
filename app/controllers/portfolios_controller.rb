@@ -10,7 +10,7 @@ class PortfoliosController < ApplicationController
 
     def index
         @page_title = "My Portfolios"
-        @portfolios = Portfolio.all
+        @portfolios = Portfolio.by_position
     end
     
     def angular_portfolio
