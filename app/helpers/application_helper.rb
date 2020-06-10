@@ -3,7 +3,7 @@ module ApplicationHelper
     #     "<p>this is sample</p>".html_safe
     # end
 
-    def nav_authentication_helper style
+    def nav_authentication_helper style = ""
          if current_user.is_a?(GuestUser)
             (link_to 'Log in', new_user_session_path, class: style) + 
             " ".html_safe +
