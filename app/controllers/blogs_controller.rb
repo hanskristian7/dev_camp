@@ -36,6 +36,7 @@ class BlogsController < ApplicationController
         format.html { redirect_to @blog, notice: 'Blog was successfully created.' }
         format.json { render :show, status: :created, location: @blog }
       else
+        flash[:error] = "Blog has not been created! Try again!"
         format.html { render :new }
         format.json { render json: @blog.errors, status: :unprocessable_entity }
       end
@@ -50,6 +51,7 @@ class BlogsController < ApplicationController
         format.html { redirect_to @blog, notice: 'Blog was successfully updated.' }
         format.json { render :show, status: :ok, location: @blog }
       else
+        flash[:error] = "Unsuccessful Update! Try again!"
         format.html { render :edit }
         format.json { render json: @blog.errors, status: :unprocessable_entity }
       end

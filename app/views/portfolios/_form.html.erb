@@ -1,7 +1,7 @@
 <%= form_for(@portfolio, multipart: true) do |f| %>
   <% if @portfolio.errors.any? %>
     <%= @portfolio.errors.full_messages.each do |error| %>
-      <%= js add_gritter(error, title: "Attention!", time: 6000)  %>
+      <%= alert_generator error %>
     <% end %>
   <% end %>
   <div class="row">
