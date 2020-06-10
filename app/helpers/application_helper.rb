@@ -3,15 +3,15 @@ module ApplicationHelper
     #     "<p>this is sample</p>".html_safe
     # end
 
-    def nav_authentication_helper
+    def nav_authentication_helper style
          if current_user.is_a?(GuestUser)
-            (link_to 'Log in', new_user_session_path) + 
-            "<br>".html_safe +
-            (link_to 'Register', new_user_registration_path) 
+            (link_to 'Log in', new_user_session_path, class: style) + 
+            " ".html_safe +
+            (link_to 'Register', new_user_registration_path, class: style) 
          else 
-            (link_to 'Edit Profile', edit_user_registration_path) +
-            "<br>".html_safe +
-            (link_to 'Logout', destroy_user_session_path, method: :DELETE )
+            (link_to 'Edit Profile', edit_user_registration_path, class: style) +
+            " ".html_safe +
+            (link_to 'Logout', destroy_user_session_path, class: style, method: :DELETE )
         end   
     end
 

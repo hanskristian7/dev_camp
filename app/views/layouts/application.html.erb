@@ -1,25 +1,33 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>DevcampPortfolio | <%= @page_title %></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title><%= @page_title %></title>
     <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+
+    <meta name="keywords" content="<%= @seo_keywords %>" />
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <div class="container container-fluid">
-      <%= nav_authentication_helper %>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p> 
-      <%= render 'shared/navbar', location: 'top' %>
-      <%= yield %>
-      <%= source_helper("application") %>
+    <div class="site-wrapper">
+      <div class="site-wrapper-inner">
+        <div class="cover-container">
 
-      <%= @copyright %>
+          <%= render "shared/application_navbar" %>
+
+          <%= yield %>
+
+          <%= render "shared/footer" %>
+
+          <%= source_helper("application") %>
+
+        </div>
+      </div>
     </div>
-
   </body>
 </html>
