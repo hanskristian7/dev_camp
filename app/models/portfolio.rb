@@ -4,6 +4,10 @@ class Portfolio < ApplicationRecord
     accepts_nested_attributes_for :technologies,
                                     reject_if: lambda { |attrs| attrs['name'].blank? }
 
+
+    mount_uploader :thumb_image, PortfolioUploader
+    mount_uploader :main_image,PortfolioUploader
+
     before_save :default_images
 
     def self.by_position
