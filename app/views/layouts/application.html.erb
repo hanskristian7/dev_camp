@@ -17,7 +17,16 @@
     <div class="site-wrapper">
       <div class="site-wrapper-inner">
         <div class="cover-container">
-          <div id="background"></div>
+
+          <%= video_tag(
+            'HardDrivePhotojpeg.mp4',
+            id: 'background',
+            autoplay: true,
+            muted: true,
+            poster: 'profile.jpg' 
+          ) 
+          %>
+          <!-- <div id="background"></div> -->
           <%= render "shared/application_navbar" %>
           <%= yield %>
           <%= render "shared/footer" %>
