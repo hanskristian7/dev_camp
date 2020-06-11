@@ -4,10 +4,23 @@
         <h1>About me</h1>
         <div class="row">
             <div class="col-md-4">
-                <!-- <img src="https://place-hold.it/600x800/#709fb0" alt="Profile" width=300> -->
-                <!-- <%= image_tag "https://place-hold.it/600x800/#709fb0", width: 300 %> -->
-                <!-- <%= image_tag "profile.jpg", width: 300 %> -->
-        
+                <%= image_tag "https://place-hold.it/600x800/#709fb0", width: 300 %>
+                <div class="skills">
+                  <% @skills.each do |skill| %>
+                    <div class="skill">
+                      <h4><%= skill.title %></h4>
+                      <div class="progress">
+                        <div
+                          class="progress-bar progress-bar-striped bg-warning"
+                          role="progressbar"
+                          aria-valuenow="<%= skill.percent_utilized %>"
+                          aria-valuemax="100"
+                          style="width: <%= skill.percent_utilized %>%"
+                        ></div>
+                      </div>
+                    </div>
+                  <% end %>
+                </div>
             </div>
             <div class="col-md-8">
                 <p>Find me in app/views/pages/about.html.erb</p>
