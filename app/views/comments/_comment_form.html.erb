@@ -3,10 +3,10 @@
     <%= form_for(@comment, url: '#') do |f| %>
     <div class="form-group">
         <%= f.label :content %>
-        <%= f.text_area :content, class: "form-control" %>
+        <%= f.text_area :content, class: "form-control", id: "comment-content" %>
     </div>
 
-    <%= f.submit 'Post Comment', class: "btn btn-primary" %>
+    <%= f.submit 'Post Comment', class: "btn btn-primary", id: "new-comment" %>
     <% end %>
 <% end %>
 <!-- end comment form -->
