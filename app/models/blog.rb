@@ -8,4 +8,8 @@ class Blog < ApplicationRecord
 
     validates :title, presence: true
     validates :body, presence: true
+
+    def self.recent
+        order("created_at DESC")
+    end
 end
