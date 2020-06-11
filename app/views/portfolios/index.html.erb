@@ -1,5 +1,6 @@
 <div class="album text-muted">
     <div class="container">
+      <%= source_helper("alert alert-warning") %>
       <div class= "row  <%= "sortable" if logged_in?(:admin)%>" >
         <%= render partial: 'portfolio', collection: @portfolios %>
       </div>
