@@ -42,18 +42,25 @@ gem 'bootstrap', '~> 4.5.0'
 gem 'jquery-rails'
 gem 'petergate'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.1'
+# for paginate
 gem 'kaminari', '~> 1.0', '>= 1.0.1'
 
 gem 'jquery-ui-rails', '~> 6.0', '>= 6.0.1'
 
+# for image
 gem 'carrierwave', '~> 1.0'
 gem 'mini_magick', '~> 4.6'
 gem 'carrierwave-aws', '~> 1.0', '>= 1.0.2'
 gem 'dotenv-rails', '~> 2.1', '>= 2.1.2'
+
 gem 'cocoon', '~> 1.2', '>= 1.2.14'
 gem 'gritter', '~> 1.2'
 gem 'twitter', '~> 7.0'
+
 gem 'redis', '~> 4.2'
+
+gem 'redcarpet', '~> 3.5'
+gem 'coderay', '~> 1.1', '>= 1.1.3'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
