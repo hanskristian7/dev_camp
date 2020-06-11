@@ -22,7 +22,7 @@ class BlogsController < ApplicationController
       @comment = Comment.new
       @page_title = @blog.title
       @seo_keywords = @blog.body
-      
+
     else
       redirect_to blogs_path, notifce: "You are not auth!"
     end
@@ -102,6 +102,6 @@ class BlogsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def blog_params
-      params.require(:blog).permit(:title, :body, :topic)
+      params.require(:blog).permit(:title, :body, :topic_id)
     end
 end
