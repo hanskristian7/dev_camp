@@ -8,18 +8,9 @@
     <%= @blog.body %>
   </p>
 
-  <!-- start comment form -->
-  <% unless current_user.is_a? GuestUser %>
-    <%= form_for(@comment, url: '#') do |f| %>
-      <div class="form-group">
-        <%= f.label :content %>
-        <%= f.text_area :content, class: "form-control" %>
-      </div>
+  <%= render 'comments/comment_form' %>
 
-      <%= f.submit 'Post Comment', class: "btn btn-primary" %>
-    <% end %>
-  <% end %>
-  <!-- end comment form -->
-  <%= render @blog.comments %>
-  
+  <div id="comments", data-blog-id="<% @blog.id %>">
+    <%= render @blog.comments %>
+  </div>
 </div>
